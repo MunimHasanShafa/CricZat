@@ -1,3 +1,26 @@
 #header-section{
     margin-top: 80px;
 }
+body{
+    margin: 0;
+}
+.nav-icon{
+    text-align: center;
+    text-decoration: wavy;
+}
+.matches{
+    margin-top: 30px;
+    max-height: 130px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.matches .items{
+    min-width: 300px;
+    height: 130px;
+    padding-left: 10px;
+    text-align: left;
+    background-color: lightgrey;
+    margin-right: 5px;
+    border-radius: 5px;
+}
