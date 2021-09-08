@@ -24,3 +24,53 @@ body{
     margin-right: 5px;
     border-radius: 5px;
 }
+.main-body{
+    margin-top: 30px;
+    margin-bottom: 300px;
+}
+.post-front{
+    padding: 20px;
+    border: 1px solid lightgrey;
+}
+
+.identity img{
+    max-width: 70px;
+    border-radius: 30px;
+    margin-top: 10px;
+    
+}
+.identity .profile-title{
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.identity h3, h4{
+    line-height: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.news-body{
+    border: 1px solid lightgrey;
+    padding: 20px;
+    align-items: center;
+}
+.news-front img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.news-body p{
+    color: gray;
+}
+.footer{
+    background-color: dimgray;
+    color: white;
+    padding: 30px 40px;
+    
+}
+.footer img{
+    width: 50%;
+    padding: 0;
+}
+.footer-col{
+    text-align: justify;
+}
