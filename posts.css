@@ -1,0 +1,50 @@
+
+.button-group{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.button-group button{
+    background-color: transparent;
+    text-decoration: none;
+    color: black;
+    border: 1px solid rgb(58, 58, 58);
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin: 0px 3px;
+}
+.button-group #button-2{
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+.post-main{
+    display: flex;
+    justify-content: center;
+}
+ul{
+    list-style-type: none;
+}
+.posts{
+    margin-top: 30px;
+    max-width: 650px;
+    padding: 20px;
+    border: 1px solid lightgrey;
+}
+.profile-img-posts{
+    width: 50%;
+}
+.post-body img{
+    width: 8%;
+    margin-right: 10px;
+}
+.post-head{
+    display: flex;
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
+.post-head p{
+    margin-top: 12px;
+}
+#post-giver{
+    color: blue;
+}
