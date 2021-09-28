@@ -21,20 +21,21 @@
                         <button type='button'onclick='login()'class='toggle-btn' id="login-btn">Log In</button>
                         <button type='button'onclick='register()'class='toggle-btn' id="reg-btn">Register</button>
                     </div>
-                    <form id='login' class='input-group-login'>
-                        <input type='text'class='input-field'placeholder='Email Id' required >
-                <input type='password'class='input-field'placeholder='Enter Password' required>
-                <input type='checkbox'class='check-box'><span>Remember Password</span>
-                <button type='submit'class='submit-btn'>Log in</button>
-             </form>
-             <form id='register' class='input-group-register'>
-                 <input type='text'class='input-field'placeholder='First Name' required>
-                 <input type='text'class='input-field'placeholder='Last Name ' required>
-                 <input type='email'class='input-field'placeholder='Email Id' required>
-                 <input type='password'class='input-field'placeholder='Enter Password' required>
-                 <input type='password'class='input-field'placeholder='Confirm Password'  required>
-                 <input type='checkbox'class='check-box'><span>I agree to the "Terms & Conditions" and "Privacy Policy".</span>
+                    
+                <form action="" method="post" id='login' class='input-group-login'>
+                    <input type='text'class='input-field'placeholder='Email Id' required >
+                    <input type='password'class='input-field'placeholder='Enter Password' required>
+                    <button type='submit'class='submit-btn'>Log in</button>
+                </form>
+             
+                <form action="registration.php" method="post">
+                    <div  id='register' class='input-group-register'>
+                        <input type='text' name='firstName' class='input-field' placeholder='First Name' required>
+                        <input type='text' name='lastName' class='input-field' placeholder='Last Name ' required>
+                        <input type='email' name='email' class='input-field' placeholder='Email Id' required>
+                        <input type='password' name='password' class='input-field' placeholder='Enter Password' required>
                         <button type='submit'class='submit-btn'>Register</button>
+                    </div>   
                  </form>
                 </div>
             </div>

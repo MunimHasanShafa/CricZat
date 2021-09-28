@@ -30,7 +30,7 @@
                         <a class="nav-link active" href="#">News</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link active" href="#" onclick="window.location.replace('posts.html');">Posts</a>
+                        <a class="nav-link active" href="#" onclick="window.location.replace('posts.php');">Posts</a>
                       </li>
                       <!-- <li class="nav-item">
                         <a class="nav-link active" href="#">Quiz</a>
@@ -54,7 +54,7 @@
                     </form>
                     <ul class="navbar-nav mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" href="#" onclick="window.location.replace('login.html');"><i class="bi bi-person-circle">Login</i></span></a>
+                        <a class="nav-link active" href="#" onclick="window.location.replace('login.php');"><i class="bi bi-person-circle">Login</i></span></a>
                       </li>
                     </ul>
                   </div>
