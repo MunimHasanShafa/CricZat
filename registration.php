@@ -1,13 +1,14 @@
 <?php
     session_start();
+    header('location: login.php');
 
     $con = mysqli_connect('localhost', 'root', '');
-    mysql_select_db($con, 'criczat');
+    mysqli_select_db($con, 'criczat');
 
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $email = $_POST['email'];
-    $pass = $_POST['password'];
+    $password = $_POST['password'];
 
     $s = " select * from userTable where email = '$email'";
     $result = mysqli_query($con, $s);
@@ -17,11 +18,29 @@
         echo "email already registered";
     }
     else{
-        $reg = " insert into userTable(firstName, lastName, email, password) values ('$firstName', '$lastName', '$email', '$pass')";
-        print_r($reg);
+        $reg = " insert into userTable(firstName, lastName, email, password) values ('$firstName', '$lastName', '$email', '$password')";
         mysqli_query($con, $reg);
         echo"registration successful";
     }
 
+
+    // include("connect.php");
+    // include("signin.php");
+    // $firstName = "";
+    // $lastName = "";
+    // $email = "";
+
+
+    // if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    //     $signup = new Signup();
+    //     $result = $signup->evaluate($_POST);
+
+    //     $firstName = $_POST['firstName'];
+    //     $lastName = $_POST['lastName'];
+    //     $email = $_POST['email'];
+    // }
+
+    
 
 ?>

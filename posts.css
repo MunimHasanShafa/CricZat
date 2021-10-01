@@ -20,6 +20,7 @@
 .post-main{
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 ul{
     list-style-type: none;
@@ -30,21 +31,17 @@ ul{
     padding: 20px;
     border: 1px solid lightgrey;
 }
-.profile-img-posts{
-    width: 50%;
-}
-.post-body img{
-    width: 8%;
-    margin-right: 10px;
-}
-.post-head{
-    display: flex;
-    vertical-align: middle;
-    margin-bottom: 20px;
-}
-.post-head p{
-    margin-top: 12px;
-}
+
 #post-giver{
     color: blue;
 }
+.post-section{
+    width: 650px;
+}
+.post-section #textarea{
+    resize: none;
+    width: 100%;
+    padding: 10px;
+}
+
+
