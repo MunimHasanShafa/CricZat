@@ -12,12 +12,12 @@
     $num = mysqli_num_rows($result);
 
     if($num == 1){
+        
+        $_SESSION['criczat_email'] = $email;
         header('location: index.php');
-        echo"hello";
+
     }
     else{
-        echo '<script>alert("Incorrect Email or Password")</script>';
         header('location: login.php');
-        
     }
 ?>

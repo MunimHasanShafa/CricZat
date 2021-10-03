@@ -13,8 +13,8 @@
     border-radius: 20px;
     margin: 0px 3px;
 }
-.button-group #button-2{
-    background-color: rgb(58, 58, 58);
+.button-group button:hover{
+    background-color: black;
     color: white;
 }
 .post-main{

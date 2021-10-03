@@ -9,7 +9,7 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link active" href="#">Series</a>
@@ -18,7 +18,7 @@
                         <a class="nav-link active" href="#">News</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link active" href="#" onclick="window.location.replace('posts.php');">Posts</a>
+                        <a class="nav-link active" href="posts.php" >Posts</a>
                       </li>
                       <!-- <li class="nav-item">
                         <a class="nav-link active" href="#">Quiz</a>
@@ -40,15 +40,16 @@
                     <ul class="navbar-nav mb-2 mb-lg-0">
                       <li class="nav-item">
                         <?php
-                          if(isset($_SESSION['email'])){ 
+                          if(isset($_SESSION['criczat_email'])){ 
                           ?>
-                            <a name="login" class="nav-link active" href="login.php" >Login</a>
+                            <a class="nav-link active" href="logout.php" >Logout</a>
                           <?php
                           }else{
                             ?>
-                            <a name="logout" href="logout.php" class="nav-link active">Logout</a>
+                            <a href="login.php" class="nav-link active">Login</a>
                           <?php }
                         ?>
+                        <?php //echo $_SESSION['firstName']?>
                       </li>
                     </ul>
                   </div>
@@ -56,3 +57,4 @@
               </nav>
         </div>
     </section>
+

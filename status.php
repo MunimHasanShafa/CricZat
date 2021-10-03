@@ -1,31 +1,21 @@
 <?php
 
-    // class Post {
-    //     private $error = "";
-    //     public function create_post($data){
-    //         if(!empty($data['post'])){
 
-    //         }else{
-    //             $this->error .= "Please write something to post. <br>";
-    //         }
-    //         return $this->error;
-    //     }
-    // }
-
-    // session_start();
-    // header('location: login.php');
-
+    session_start();
     $con = mysqli_connect('localhost', 'root', '');
     mysqli_select_db($con, 'criczat');
+    $email = $_SESSION['criczat_email'];
+    $likes = 0;
+    $message1 =  mysqli_real_escape_string($con,$_POST['message']);
 
-    $post_text = $_POST['post_text'];
+    if(empty($data['post'])){
+        $user_contact_query="insert into posts(email, text, likes) values ('$email', '$message1', '$likes')";
+        $user_contact_result=mysqli_query($con,$user_contact_query) or die(mysqli_error($con));
+        header('location: posts.php');
+    }else{
+        header('location: posts.php');
+    }
     
-
-    $s = " select * from posts where email = '$email'";
-    $result = mysqli_query($con, $s);
-    $num = mysqli_num_rows($result);
-
-    $reg = " insert into posts(postid, email, text, likes, date) values ('$postid', '$email', '$text', '$likes', '$date')";
-    mysqli_query($con, $reg);
-
+    
 ?>
+

@@ -1,21 +1,14 @@
 <?php
-  // session_start();
-  // if(isset($_SESSION['email'])){
-  //   header('location: login.php');
-  // }
-  // else{
-  //   $var = true;
-  // }
-  // // function logout(){
-  // //   $var = false;
-  // //   session_destroy();
-  // //   header('location: index.php');
-  // // }
-  // if(isset($_POST['logout'])){
-  //   $var = false;
-  //   session_destroy();
-  //   header('location: index.php'); 
-  // }
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "criczat";
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  session_start();
+  
+  $_SESSION['criczat_email']
+  
+
   
 
 ?>
@@ -36,45 +29,9 @@
       require 'header.php';
     ?>
 
-    <section class="container">
-      <div class="matches">
-        <div class="items">
-          <p>Match-1</p>
-          <h6>Batting</h6>
-          <h6>Bowling</h6>
-          <p>Need 14 runs</p>
-        </div>
-        <div class="items">
-          <p>Match-2</p>
-          <h6>Batting</h6>
-          <h6>Bowling</h6>
-          <p>Need 14 runs</p>
-        </div>
-        <div class="items">
-          <p>Match-3</p>
-          <h6>Batting</h6>
-          <h6>Bowling</h6>
-          <p>Need 14 runs</p>
-        </div>
-        <div class="items">
-          <p>Match-4</p>
-          <h6>Batting</h6>
-          <h6>Bowling</h6>
-          <p>Need 14 runs</p>
-        </div>
-        <div class="items">
-          <p>Match-5</p>
-          <h6>Batting</h6>
-          <h6>Bowling</h6>
-          <p>Need 14 runs</p>
-        </div>
-        <div class="items">
-          <p>Match-6</p>
-          <h6>Batting</h6>
-          <h6>Bowling</h6>
-          <p>Need 14 runs</p>
-        </div>
-      </div>
+    <section class="container live-score">
+     
+      <iframe src="https://bwidget.crictimes.org/" style="width:100%;min-height: 250px;" frameborder="0" scrolling="yes"></iframe>
     </section>
 
     <section class="container main-body">
@@ -94,7 +51,7 @@
             </div>
           </div>
         </div>
-        <div class="col-5 news-front">
+        <!-- <div class="col-5 news-front">
           <h3>News</h3>
           <div class="news-body">
             <div>
@@ -106,7 +63,28 @@
               
             </div>
           </div>
-        </div>
+        </div> -->
+
+        <?php
+          $sql = "SELECT * FROM news";
+          $result = $conn->query($sql);
+          if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+          ?>
+                  <div class="col-5 news-front">
+                    <div class="image-holder"><img src="image/<?php echo $row["image"] ?>"></div>
+                      <div class="news-title"><h3><?php echo $row["title"] ?></h3>
+                      <p><?php echo $row["text"] ?></p>
+                      <p><?php echo $row["date"] ?></p>
+                    </div>
+
+                      
+                      
+                  </div>
+          <?php
+              }
+          }
+        ?>
       </div>
     </section>
 
@@ -114,7 +92,9 @@
       <div class="row">
         <div class="col-2"></div>
         <div class="col-3 footer-img footer-col">
-          <img src="logos/footer.png" alt="">
+          <img src="logos/footer.png" alt=""><br>
+          <p>Dhaka, Bangladesh</p>
+          
         </div>
         <div class="col-3 footer-col">
           <h3>Follow Us On</h3>
@@ -126,8 +106,8 @@
           <h3>About</h3>
           <a href="">Privacy Policy</a><br>
           <a href="">Terms of Use</a><br>
-          <a href="">Careers</a><br>
-          <a href="">Advertisement</a>
+          <a href="">About Us</a><br>
+          <a href="admin.php">Go To Admin</a>
 
         </div>
       </div>
