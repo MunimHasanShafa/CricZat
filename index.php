@@ -6,7 +6,7 @@
   $conn = new mysqli($servername, $username, $password, $dbname);
   session_start();
   
-  $_SESSION['criczat_email']
+  $_SESSION['criczat_email'];
   
 
   
@@ -37,8 +37,9 @@
 
     <section class="container main-body">
       <div class="row">
-        <div class="col-7">
-          <h3>Featured Post</h3>
+      <h3>Featured Post</h3>
+        
+          
 
         <?php
           $sql = "SELECT * FROM features";
@@ -46,16 +47,25 @@
           if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
           ?>
+          <div class="col-md-6">
           
           <div class="post-front">
                   
                     <div class="show-img"><img src="image/<?php echo $row["image"] ?>"></div>
                       <div class="feature-writer">
                       
-                      <a id="profile-title" href="show.php"><?php echo $row["title"] ?></a>
-                      <p><?php echo $row["name"] ?></p>
-                      <p><?php echo $row["date"] ?></p>
-                      <?php $_SESSION['id'] =  $row["featureId"] ?>
+                    
+                      <form action="show.php" method="get">
+                        <a id="profile-title"><?php echo $row["title"] ?></a>
+                        <p id="name"><?php echo $row["name"] ?></p>
+                        <p id="date"><?php echo $row["date"] ?></p>
+                        <input name="id" type="hidden" value="<?php echo $row["featureId"]  ?>">
+                        <input type="submit" value="See more">
+                      </form>
+
+                      <?php 
+                      
+                      ?>
                     </div>
               </div>
               </div>
@@ -68,21 +78,27 @@
           }
         ?>
         
-        <div class="col-5 news-front">
-          <h3>News</h3>
+        <h3>News</h3>
+        
         <?php
           $sql = "SELECT * FROM news";
           $result = $conn->query($sql);
           if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
           ?>
+          <div class="col-md-4 news-front">
           
           <div class="news-body">
-                  <div class="col-5 news-front">
-                    <div class="image-holder"><img src="image/<?php echo $row["image"] ?>"></div>
-                      <div class="news-title"><h3><?php echo $row["title"] ?></h3>
-                      <p><?php echo $row["text"] ?></p>
-                      <p><?php echo $row["date"] ?></p>
+                  <div >
+                    <div class="show-img-news"><img src="image/<?php echo $row["image"] ?>"></div>
+
+                      <div class="news-title">
+                      <form action="showNews.php" method="get">
+                      <p id="news-title-id"><?php echo $row["title"] ?></p>
+                      <p id="news-date"><?php echo $row["date"] ?></p>
+                      <input type="hidden" name="id" value="<?php echo $row["newsid"]  ?>">
+                      <input type="submit" value="See more">
+                      </form>
                     </div>
               </div>
               </div>

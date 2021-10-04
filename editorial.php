@@ -39,7 +39,7 @@
                 </form>
                 </div>
                 <div class="col-md-4">
-                <h4>Add News</h4>
+                <h4>Add Feature Post</h4>
                 <form action="addToFet.php" method="post" enctype="multipart/form-data">
                     <textarea name="fet_title" id="" cols="30" rows="1"></textarea><br>
                     <textarea name="name" id="" cols="30" rows="1"></textarea><br>

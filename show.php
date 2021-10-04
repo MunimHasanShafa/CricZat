@@ -14,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="show.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -23,38 +24,45 @@
     <?php
         require 'header.php';
     ?>
-    <center>
-    <div class="show-post">
+    
+    <div class="container">
+        <div class="show-post-news">
+                
+                <?php
+                $id = $_GET['id'];
 
-        <?php
-        $id = $_SESSION['id'];
-        
-          $sql = "SELECT title, name, text, image, date FROM features where featureId = $id";
-          $result = $conn->query($sql);
-          if ($result->num_rows > 0) {
-              while ($row = $result->fetch_assoc()) {
-          ?>
-          
-          <div class="post-front">
-                  
-                    <div class="show-img"><img src="image/<?php echo $row["image"] ?>"></div>
-                      <div class="feature-writer">
-                      <h4 id="profile-title"><?php echo $row["title"] ?></h4>
-                      <p><?php echo $row["name"] ?></p>
-                      <p><?php echo $row["text"] ?></p>
-                      <p><?php echo  $row["date"] ?></p>
+                $sql = "SELECT title, name, text, image, date FROM features where featureId = $id";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                ?>
+                
+                <div class="post-front-news">
+                        
+                            <div class="show-img-news"><img src="image/<?php echo $row["image"] ?>"></div>
+                            <div class="feature-writer-news">
+                            <p id="profile-title-news"><?php echo $row["title"] ?></p>
+                            <p id="name"><?php echo $row["name"] ?></p>
+                            <p id="date"><?php echo  $row["date"] ?></p>
+                            <p id="text"><?php echo $row["text"] ?></p>
+                            
+                            </div>
                     </div>
-              </div>
-              </div>
+                    </div>
 
-                      
-                      
-            
-          <?php
-              }
-          }
-        ?>
-    </center>
+                            
+                            
+                    
+                <?php
+                    }
+                }
+                ?>
+    </div>
+
+    <?php
+        require "footer.php";
+    ?>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

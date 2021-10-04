@@ -1,6 +1,5 @@
 .footer{
     background-color: dimgray;
-    color: white;
     padding: 30px 40px;
     
 }
@@ -8,18 +7,31 @@
     width: 50%;
     padding: 0;
 }
-.footer-col{
-    text-align: left;
+
+.footer-parts{
+    display: flex;
+        width: 600px;
+        justify-content: space-between;
 }
-.footer-col a{
+@media only screen and (max-width: 600px){
+    .footer-parts{
+        display: flex;
+        width: 400px;
+        justify-content: space-between;
+    }
+    .footer img{
+        width: 80%;
+        padding: 0;
+    }
+}
+
+.footer-parts a{
     color: white;
     text-decoration: none;
-}
-.footer h3{
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-.footer p{
     font-size: 15px;
-    line-height: 10px;
+    
+}
+.footer-parts p{
+    color: white;
+    font-size: 15px;
 }

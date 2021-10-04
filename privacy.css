@@ -1,0 +1,14 @@
+.text-container-privacy{
+    margin: auto;
+    width: 70%;
+    padding: 20px;
+	margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: whitesmoke;
+}
+.texts p{
+    color: black;
+}
+.intro{
+    font-weight: bold;
+}

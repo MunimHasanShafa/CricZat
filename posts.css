@@ -20,13 +20,19 @@
 .post-main{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    
 }
 ul{
     list-style-type: none;
 }
+@media only screen and (max-width: 600px){
+    .posts{
+        max-width: 350px !important;
+        min-width: 350px !important;
+    }
+}
 .posts{
-    margin-top: 30px;
+    min-width: 650px;
     max-width: 650px;
     padding: 20px;
     border: 1px solid lightgrey;
@@ -35,9 +41,7 @@ ul{
 #post-giver{
     color: blue;
 }
-.post-section{
-    width: 650px;
-}
+
 .post-section #textarea{
     resize: none;
     width: 100%;

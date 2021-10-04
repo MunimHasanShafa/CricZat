@@ -15,62 +15,67 @@ body{
 .bi-person-circle{
     font-style: normal;
 }
-.matches{
-    margin-top: 30px;
-    max-height: 130px;
-    display: flex;
-    overflow-x: scroll;
-}
 
-.matches .items{
-    min-width: 300px;
-    height: 130px;
-    padding-left: 10px;
-    text-align: left;
-    background-color: lightgrey;
-    margin-right: 5px;
-    border-radius: 5px;
-}
+
 .main-body{
     margin-top: 10px;
     margin-bottom: 300px;
 }
 .post-front{
-    padding: 12px;
+    padding: 20px;
+	margin-bottom: 30px;
     border: 1px solid lightgrey;
 }
-.show-image{
-	width: fit-content;
-}
 
+.show-img img{
+	width: 100%;
+	margin-bottom: 15px;
+}
 #profile-title{
     margin-top: 5px;
 	color: black;
 	text-decoration: none;
     
 }
-.feature-writer h3, h4{
-	font-size: 20px;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+.feature-writer a{
+	font-size: 22px;
+    margin-top: 15px;
+	line-height: 1.6;
 }
-.news-front{
-	max-width: 400px;
+
+#name{
+	font-size: 18px;
+
+    line-height: .8;
+    font-weight: bold;
+}
+#date{
+	line-height: 0;
+    font-size: 12px;
+    color: rgb(61, 61, 61);
+}
+.show-img-news img{
+	width: 100%;
+}
+.news-front{	
 	margin-bottom: 30px;
 }
+
 .news-body{
     border: 1px solid lightgrey;
     padding: 20px;
-    align-items: center;
+	overflow: hidden;
 	
 }
-.news-front img{
-    width: 100%;
-    margin-bottom: 10px;
+#news-title-id{
+	line-height: 1.6;
+	color: black;
+	font-size: 20px;
 }
-.news-body p{
-    color: gray;
+#news-date{
+	line-height: 0;
+    font-size: 12px;
+    color: rgb(61, 61, 61);
 }
 
 

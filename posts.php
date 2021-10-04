@@ -45,7 +45,7 @@
           <form method="post" action="status.php">
 					
 					<textarea  name="message" id="textarea" rows="3" placeholder="Tell us what you are thinking..."></textarea>
-					<input id="post_button" type="submit" value="POST NOW" class="contact-in-btn">
+					<input name="post_now" id="post_button" type="submit" value="POST NOW" class="contact-in-btn">
 				</form>
           
         
@@ -59,18 +59,26 @@
           
         
 
-        
+        $email = $_SESSION['criczat_email'];
         if(isset($_POST['all_posts'])){
           $con = mysqli_connect('localhost', 'root', '');
           mysqli_select_db($con, 'criczat');
-          $email = $_SESSION['criczat_email'];       
           $query = "select userTable.firstName, userTable.lastName, posts.text, posts.date from posts inner join userTable on userTable.email=posts.email order by postid desc";
         }
         if(isset($_POST['your_posts'])){
-          $con = mysqli_connect('localhost', 'root', '');
-          mysqli_select_db($con, 'criczat');
-          $email = $_SESSION['criczat_email'];       
-          $query = "select userTable.firstName, userTable.lastName, posts.text, posts.date from posts inner join userTable on userTable.email= '$email' order by postid desc";
+          if(isset($_SESSION['criczat_email'])){
+              $con = mysqli_connect('localhost', 'root', '');
+              mysqli_select_db($con, 'criczat');
+              $query = "select userTable.firstName, userTable.lastName, posts.text, posts.date from posts inner join userTable on userTable.email= '$email' order by postid desc";
+          }else{
+            echo '<script>alert("You have not logged in yet. Please log in to share your thoughts!!")</script>';
+  
+          }
+        }
+        if(isset($_POST['post_now'])){
+          if(!isset($_SESSION['criczat_email'])){
+            echo '<script>alert("You have not logged in yet. Please log in to share your thoughts!!")</script>';
+          }
         }
         
         
@@ -106,7 +114,7 @@
     <?php
               }
             }else{
-              echo "not found";
+              echo '<script>alert("Data Not Found")</script>';
             }
            ?>
 
@@ -136,14 +144,14 @@
         //     document.getElementById('post-box').style.display = "block";
         }
         // function userPost(){
-        //     document.getElementById("button-1").style.backgroundColor = "white";
-        //     document.getElementById("button-1").style.color = "black";
-        //     document.getElementById("button-2").style.backgroundColor = "rgb(58, 58, 58)";
-        //     document.getElementById("button-2").style.color = "white";
+        // //     document.getElementById("button-1").style.backgroundColor = "white";
+        // //     document.getElementById("button-1").style.color = "black";
+        // //     document.getElementById("button-2").style.backgroundColor = "rgb(58, 58, 58)";
+        // //     document.getElementById("button-2").style.color = "white";
             
-        //     document.getElementById("button-4").style.backgroundColor = "white";
-        //     document.getElementById("button-4").style.color = "black";
-        //     document.getElementById('post-box').style.display = "none";
+        // //     document.getElementById("button-4").style.backgroundColor = "white";
+        // //     document.getElementById("button-4").style.color = "black";
+        //      document.getElementById('post-box').style.display = "none";
             
             
         // }

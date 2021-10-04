@@ -1,24 +1,18 @@
 <footer class="footer">
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col-3 footer-img footer-col">
-          <img src="logos/footer.png" alt=""><br>
-          <p>Dhaka, Bangladesh</p>
-          
-        </div>
-        <div class="col-3 footer-col">
-          <h3>Follow Us On</h3>
-          <a href="">Facebook</a><br>
-          <a href="">Twitter</a><br>
-          <a href="">Instagram</a>
-        </div>
-        <div class="col-3 footer-col">
-          <h3>About</h3>
-          <a href="">Privacy Policy</a><br>
-          <a href="">Terms of Use</a><br>
-          <a href="">About Us</a><br>
-          <a href="admin.php">Go To Admin</a>
 
+        
+        <center>
+        <div class="w-25">
+        <img src="logos/footer.png" alt=""><br>
         </div>
-      </div>
+        <div class="footer-parts">
+          <p>ⓒ CricZat 2021</p>
+          <p><a href="privacy.php">Privacy Policy</a></p>
+          <p><a href="about.php">About Us</a></p>
+          <p><a href="admin.php">Go To Admin</a></p>
+        </div>
+        
+
+        </center>
+      
       </footer>
