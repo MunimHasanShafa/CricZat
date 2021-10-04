@@ -39,7 +39,9 @@ body{
     padding: 12px;
     border: 1px solid lightgrey;
 }
-
+.show-image{
+	width: fit-content;
+}
 
 #profile-title{
     margin-top: 5px;
