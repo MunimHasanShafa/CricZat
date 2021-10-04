@@ -42,6 +42,7 @@
                 <h4>Add News</h4>
                 <form action="addToFet.php" method="post" enctype="multipart/form-data">
                     <textarea name="fet_title" id="" cols="30" rows="1"></textarea><br>
+                    <textarea name="name" id="" cols="30" rows="1"></textarea><br>
                     <textarea name="fet_body" id="" cols="30" rows="3"></textarea><br>
                     <input type="file" name="fet_image" id=""><br>
                     <input type="submit" name="post" value="Add This">
