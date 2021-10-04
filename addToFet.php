@@ -8,24 +8,18 @@
     $conn = new mysqli($servername, $username, $password, $dbname);
     session_start();
 
-    $title = $_POST['title'];
-    $news = $_POST['news_body'];
-    $image = $_FILES['image']['name'];
-    $temp = $_FILES['image']['tmp_name'];
+    $title = $_POST['fet_title'];
+    $text = $_POST['fet_body'];
+    $image = $_FILES['fet_image']['name'];
+    $temp = $_FILES['fet_image']['tmp_name'];
     $folder = "image/".$image;
     
-    
 
-    $s = "insert into news (title, text, image) values ('$title', '$news', '$image')";
-    
+    $s = "insert into features (title, text, image) values ('$title', '$text', '$image')";
+
     move_uploaded_file($temp, $folder);
     $result = $conn->query($s);
     header('location: editorial.php');
-
-    
-    
-    
-
     
 
 ?>

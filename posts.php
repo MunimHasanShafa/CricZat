@@ -13,6 +13,7 @@
     <title>Posts</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="posts.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -23,9 +24,15 @@
 
     <section class="container">
         <div class="button-group">
-            <button id="button-1" onclick='postNow()'>Post Now</button>
-            <button id="button-2" onclick='userPost()'>Your Posts</button>
-            <button id="button-4" onclick='allPosts()'>All Posts</button>
+            <form action="" method="post">
+              <button name="post_now" id="button-1" onclick='postNow()'>Post Now</button>
+            </form>
+            <form action="" method="post">
+              <button name="your_posts" id="button-2" onclick='userPost()'>Your Posts</button>
+            </form>
+            <form action="" method="post">
+              <button name="all_posts" id="button-4" onclick='allPosts()'>All Posts</button>
+            </form>
             
         </div><br>
     </section>
@@ -38,7 +45,7 @@
           <form method="post" action="status.php">
 					
 					<textarea  name="message" id="textarea" rows="3" placeholder="Tell us what you are thinking..."></textarea>
-					<input id="post_button" type="submit" value="SUBMIT" class="contact-in-btn">
+					<input id="post_button" type="submit" value="POST NOW" class="contact-in-btn">
 				</form>
           
         
@@ -48,24 +55,25 @@
    
     
       <?php
-        if(!isset($_SESSION['criczat_email'])){
-            header('location: login.php');
-        }
-        else{
-          $con = mysqli_connect('localhost', 'root', '');
-          mysqli_select_db($con, 'criczat');
-           function userPost(){
-            $email = $_SESSION['criczat_email'];
-            $query = "select * from posts where email = '$email' order by postid desc";
-          }
-        }
-
+        
+          
         
 
-        // $con = mysqli_connect('localhost', 'root', '');
-        // mysqli_select_db($con, 'criczat');
-        // $email = $_SESSION['criczat_email'];        
-        // $query = "select * from posts where email = '$email' order by postid desc";
+        
+        if(isset($_POST['all_posts'])){
+          $con = mysqli_connect('localhost', 'root', '');
+          mysqli_select_db($con, 'criczat');
+          $email = $_SESSION['criczat_email'];       
+          $query = "select userTable.firstName, userTable.lastName, posts.text, posts.date from posts inner join userTable on userTable.email=posts.email order by postid desc";
+        }
+        if(isset($_POST['your_posts'])){
+          $con = mysqli_connect('localhost', 'root', '');
+          mysqli_select_db($con, 'criczat');
+          $email = $_SESSION['criczat_email'];       
+          $query = "select userTable.firstName, userTable.lastName, posts.text, posts.date from posts inner join userTable on userTable.email= '$email' order by postid desc";
+        }
+        
+        
         
         
         $query_run = mysqli_query($con,$query) or die(mysqli_error($con));
@@ -79,7 +87,7 @@
                 <div class="post-body">
                     <div>
 
-                      <p id="post-giver"><?php echo $row['email']; ?></p>
+                      <p id="post-giver"><?php echo $row['firstName']." ".$row['lastName']; ?></p>
                       <p><?php echo $row['date']; ?></p>
                       
                       <div class="posts-section">
@@ -103,6 +111,11 @@
            ?>
 
 
+      <?php
+        require 'footer.php';
+      ?>
+
+
 
     
 
@@ -111,17 +124,17 @@
 
     <script>
       document.getElementById('post-box').style.display = "none";
-        // function postNow(){
+        function postNow(){
           
         //     document.getElementById("button-1").style.backgroundColor = "rgb(58, 58, 58)";
         //     document.getElementById("button-1").style.color = "white";
         //     document.getElementById("button-2").style.backgroundColor = "white";
         //     document.getElementById("button-2").style.color = "black";
-            
+                document.getElementById('post-box').style.display = "block";
         //     document.getElementById("button-4").style.backgroundColor = "white";
         //     document.getElementById("button-4").style.color = "black";
         //     document.getElementById('post-box').style.display = "block";
-        // }
+        }
         // function userPost(){
         //     document.getElementById("button-1").style.backgroundColor = "white";
         //     document.getElementById("button-1").style.color = "black";

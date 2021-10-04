@@ -12,19 +12,46 @@
 <body>
 <div class="container nav-image" id="header-section">
         <a href="index.php"><img src="logos/footer.png" alt=""></a>
+        <i class="bi bi-shield-check"></i>
     </div>
 
-    <section class="container">
-        <div class="edit-post">
-            <h4>Add News</h4>
-            <form action="addto.php" method="post" enctype="multipart/form-data">
-                <textarea name="title" id="" cols="30" rows="10"></textarea>
-                <textarea name="news_body" id="" cols="30" rows="10"></textarea>
-                <input type="file" name="image" id="">
-                <input type="submit" name="post" value="Add This">
+            <!-- <div class="container edit-post editorial">
+                <h4>Add News</h4>
+                <form action="addto.php" method="post" enctype="multipart/form-data">
+                    <textarea name="title" id="" cols="30" rows="1"></textarea><br>
+                    <textarea name="news_body" id="" cols="30" rows="3"></textarea><br>
+                    <input type="file" name="image" id=""><br>
+                    <input type="submit" name="post" value="Add This">
 
-            </form>
-        </div>
-    </section>
+                </form>
+            </div> -->
+
+            <div class="container edit-post editorial">
+            <div class="row ">
+                <div class="col-md-4">
+                <h4>Add News</h4>
+                <form action="addto.php" method="post" enctype="multipart/form-data">
+                    <textarea name="title" id="" cols="30" rows="1"></textarea><br>
+                    <textarea name="news_body" id="" cols="30" rows="3"></textarea><br>
+                    <input type="file" name="image" id=""><br>
+                    <input type="submit" name="post" value="Add This">
+
+                </form>
+                </div>
+                <div class="col-md-4">
+                <h4>Add News</h4>
+                <form action="addToFet.php" method="post" enctype="multipart/form-data">
+                    <textarea name="fet_title" id="" cols="30" rows="1"></textarea><br>
+                    <textarea name="fet_body" id="" cols="30" rows="3"></textarea><br>
+                    <input type="file" name="fet_image" id=""><br>
+                    <input type="submit" name="post" value="Add This">
+
+                </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            </div>
+
+    
 </body>
 </html>

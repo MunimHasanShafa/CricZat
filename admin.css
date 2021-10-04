@@ -7,6 +7,10 @@
 .nav-image img{
     width: 10%;
 }
+.nav-image i{
+	color: white;	
+	font-size: 20px;
+}
 .form-box
 {
     width: 380px;
@@ -84,4 +88,18 @@ span
 
 .login-page .submit-btn{
 	top: 350px;
+}
+.container .editorial{
+	margin-top: 30px;
+}
+.editorial{
+	margin-top: 30px;
+	padding: 20px 20px;
+	background-color: ghostwhite;
+	border: 1px solid gray;
+	box-shadow: 10px 10px 10px solid;
+}
+
+.edit-post textarea{
+	resize: none;
 }

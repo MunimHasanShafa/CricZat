@@ -19,6 +19,7 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link active" href="posts.php" >Posts</a>
+                        
                       </li>
                       <!-- <li class="nav-item">
                         <a class="nav-link active" href="#">Quiz</a>

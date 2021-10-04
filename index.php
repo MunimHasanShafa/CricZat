@@ -20,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CricZat</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -64,19 +65,24 @@
             </div>
           </div>
         </div> -->
-
+        <div class="col-5 news-front">
+          <h3>News</h3>
         <?php
           $sql = "SELECT * FROM news";
           $result = $conn->query($sql);
           if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
           ?>
+          
+          <div class="news-body">
                   <div class="col-5 news-front">
                     <div class="image-holder"><img src="image/<?php echo $row["image"] ?>"></div>
                       <div class="news-title"><h3><?php echo $row["title"] ?></h3>
                       <p><?php echo $row["text"] ?></p>
                       <p><?php echo $row["date"] ?></p>
                     </div>
+              </div>
+              </div>
 
                       
                       
@@ -88,30 +94,11 @@
       </div>
     </section>
 
-    <section class="footer">
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col-3 footer-img footer-col">
-          <img src="logos/footer.png" alt=""><br>
-          <p>Dhaka, Bangladesh</p>
-          
-        </div>
-        <div class="col-3 footer-col">
-          <h3>Follow Us On</h3>
-          <a href="">Facebook</a><br>
-          <a href="">Twitter</a><br>
-          <a href="">Instagram</a>
-        </div>
-        <div class="col-3 footer-col">
-          <h3>About</h3>
-          <a href="">Privacy Policy</a><br>
-          <a href="">Terms of Use</a><br>
-          <a href="">About Us</a><br>
-          <a href="admin.php">Go To Admin</a>
-
-        </div>
-      </div>
-    </section>
+    
+      <?php
+        require 'footer.php';
+      ?>
+   
 
     <script>
       var login = false;

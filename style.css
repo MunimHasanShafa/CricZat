@@ -55,11 +55,15 @@ body{
     margin: 0;
     padding: 0;
 }
-
+.news-front{
+	max-width: 400px;
+	margin-bottom: 30px;
+}
 .news-body{
     border: 1px solid lightgrey;
     padding: 20px;
     align-items: center;
+	
 }
 .news-front img{
     width: 100%;
@@ -68,31 +72,7 @@ body{
 .news-body p{
     color: gray;
 }
-.footer{
-    background-color: dimgray;
-    color: white;
-    padding: 30px 40px;
-    
-}
-.footer img{
-    width: 50%;
-    padding: 0;
-}
-.footer-col{
-    text-align: left;
-}
-.footer-col a{
-    color: white;
-    text-decoration: none;
-}
-.footer h3{
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-.footer p{
-    font-size: 15px;
-    line-height: 10px;
-}
+
 
 /* login-page-css */
 .nav-image{
