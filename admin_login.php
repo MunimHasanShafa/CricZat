@@ -16,6 +16,6 @@
 
     }
     else{
-        header('location: admin.php');
+        echo '<script>alert("Wrong Username or Password")</script>';
     }
 ?>

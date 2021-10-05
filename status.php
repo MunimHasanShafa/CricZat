@@ -13,6 +13,7 @@
         $user_contact_result=mysqli_query($con,$user_contact_query) or die(mysqli_error($con));
         header('location: posts.php');
     }else{
+        
         header('location: posts.php');
     }
     

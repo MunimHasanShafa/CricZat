@@ -9,6 +9,7 @@
           <p>ⓒ CricZat 2021</p>
           <p><a href="privacy.php">Privacy Policy</a></p>
           <p><a href="about.php">About Us</a></p>
+          <p><a href="teams.php">Teams</a></p>
           <p><a href="admin.php">Go To Admin</a></p>
         </div>
         

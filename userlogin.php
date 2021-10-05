@@ -18,6 +18,6 @@
 
     }
     else{
-        header('location: login.php');
+        echo '<script>alert("Wrong User name or password")</script>';
     }
 ?>

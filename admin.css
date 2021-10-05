@@ -103,3 +103,6 @@ span
 .edit-post textarea{
 	resize: none;
 }
+.choose-btn{
+	margin-bottom: 7px;
+}

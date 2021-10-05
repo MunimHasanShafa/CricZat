@@ -17,9 +17,13 @@
     background-color: black;
     color: white;
 }
+.post-section{
+    margin-bottom: 400px;
+}
 .post-main{
     display: flex;
     justify-content: center;
+    
     
 }
 ul{
@@ -36,6 +40,7 @@ ul{
     max-width: 650px;
     padding: 20px;
     border: 1px solid lightgrey;
+    
 }
 
 #post-giver{

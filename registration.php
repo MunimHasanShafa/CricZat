@@ -15,7 +15,7 @@
     $num = mysqli_num_rows($result);
 
     if($num == 1){
-        echo "email already registered";
+        echo '<script>alert("Email Already Registered")</script>';
     }
     else{
         $reg = " insert into userTable(firstName, lastName, email, password) values ('$firstName', '$lastName', '$email', '$password')";

@@ -60,25 +60,26 @@
         
 
         $email = $_SESSION['criczat_email'];
+        
         if(isset($_POST['all_posts'])){
           $con = mysqli_connect('localhost', 'root', '');
           mysqli_select_db($con, 'criczat');
-          $query = "select userTable.firstName, userTable.lastName, posts.text, posts.date from posts inner join userTable on userTable.email=posts.email order by postid desc";
+          $query = "select userTable.firstName, userTable.lastName, posts.text, posts.date from posts inner join userTable on posts.email = userTable.email order by postid desc";
         }
         if(isset($_POST['your_posts'])){
           if(isset($_SESSION['criczat_email'])){
               $con = mysqli_connect('localhost', 'root', '');
               mysqli_select_db($con, 'criczat');
-              $query = "select userTable.firstName, userTable.lastName, posts.text, posts.date from posts inner join userTable on userTable.email= '$email' order by postid desc";
+              $query = "select userTable.firstName, userTable.lastName, posts.text, posts.date from posts inner join userTable on userTable.email= '$email' and posts.email= '$email' order by postid desc";
           }else{
             echo '<script>alert("You have not logged in yet. Please log in to share your thoughts!!")</script>';
   
           }
         }
-        if(isset($_POST['post_now'])){
-          if(!isset($_SESSION['criczat_email'])){
+        if(!isset($email)){
+          
             echo '<script>alert("You have not logged in yet. Please log in to share your thoughts!!")</script>';
-          }
+          
         }
         
         
@@ -101,10 +102,7 @@
                       <div class="posts-section">
                         <p><?php echo $row['text']; ?></p>
                       </div>
-                      <div class="likes">
-                        <i class="bi bi-hand-thumbs-up"><?php echo $row['likes']; ?></i>
-                        
-                      </div>
+                      
                     </div>
                   </div>
             </li>
@@ -118,7 +116,7 @@
             }
            ?>
 
-
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <?php
         require 'footer.php';
       ?>

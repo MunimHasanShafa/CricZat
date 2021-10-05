@@ -1,3 +1,17 @@
+<?php
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "criczat";
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  session_start();
+  
+  $_SESSION['criczat_email'];
+  
+
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,9 +21,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teams.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="privacy.css">
-    <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -20,19 +34,34 @@
     ?>
     <div class="container">
         <div class="text-container-privacy">
-            
-            <h3>About Us</h3>
-            <p>This is a Bangladeshi cricket news website as well as a fan's thought post site as we say.Here in this website you can be updated with with the latest news and follow ups of cricket world.Here a fan can also post his/her thoughts about particular match as well as any other regarding cricket.This makes the website more attractive where fans can share their thoughts with the people all over the internet.We tried to bring a platform for the cricket lovers and still committed to make this journey of cricket fans smooth.We are determined through this website we may connect all the cricket fans together and make cricket sport more exciting than ever before.</p>
-            <br><br><br>
 
-            <h3><i class="bi bi-geo-alt"></i>Address</h3>
-            <p>141 & 142 Love Road</p>
-            <p>Tejgaon Industrial Area</p>
-            <p>Tejgaon, Dhaka-1208</p>
-            <p><i class="bi bi-telephone"></i> 01752502296</p>
-            <p><i class="bi bi-envelope"></i> mail@criczat</p>
+            <h3>Co-Founders</h3>
+            <div class="row">
+            <?php
+          $sql = "SELECT * FROM team";
+          $result = $conn->query($sql);
+          if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+          ?>
+            
+                <div class="col-md-6">
+                    <img src="image/<?php echo $row["image"] ?>">
+                    <h4><?php echo $row["name"] ?></h4>
+                    <p><?php echo $row["description"] ?></p>
+                    <p><?php echo $row["email"] ?></p>
+                
+                </div>
+                
+                <?php
+                }
+            }
+            ?>    
+            </div>
             
         </div>
+    
+
+        
     </div>
 
     <?php

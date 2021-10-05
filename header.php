@@ -11,12 +11,7 @@
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" href="#">Series</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" href="#">News</a>
-                      </li>
+                      
                       <li class="nav-item">
                         <a class="nav-link active" href="posts.php" >Posts</a>
                         
@@ -32,7 +27,7 @@
                         <?php
                           if(isset($_SESSION['criczat_email'])){ 
                           ?>
-                            <a class="nav-link active" href="logout.php" >Logout</a>
+                            <a class="nav-link active" href="logout.php" ><i style="font-size: 25px;" class="bi bi-box-arrow-right"></i></a>
                           <?php
                           }else{
                             ?>
